@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Calculater</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+                width: 100%;
+                height: 100vh;
+                background-color: darkgrey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+        .text {
+            text-align: right;
+            border: 1px solid silver;
+            width: 195px;
+            font-size: 25px;
+            margin-left: 4px;
+            padding: 10px;
+        }
+
+        .a {
+            width: 50px;
+            height: 50px;
+            margin: 2px;
+            font-size: 15px;
+            border: none;
+        }
+
+    </style>
+<script>
+function calc()
+{
+var a=document.getElementById('textview').value;
+document.getElementById('textview2').value=eval(a);
+}
+function c()
+{
+	var a=document.getElementById('textview').value;
+	document.getElementById('textview').value=a.substr(0,a.length-1);
+}
+function clr()
+{
+	var a=document.getElementById('textview').value;
+	document.getElementById('textview').value=a.substr(0,a.length-a.length);
+
+    var b=document.getElementById('textview2').value;
+	document.getElementById('textview2').value=b.substr(0,b.length-b.length);
+}
+</script>
+</head>
+
+<body>
+    <div class="main">
+        <form class="form" name="form">
+            <input class="text" id="textview"><br>
+            <input class="text" id="textview2">
+        </form>
+        <table class="table" name="table">
+            <tr>
+                <td><input class="a" type="button" value="C" name="clear" onclick="clr()"></td>
+                <td><input class="a" type="button" value="<" onclick="c();"></td>
+                <td><input class="a" type="button" value="/" onclick="document.getElementById('textview').value+='/';"></td>
+                <td><input class="a" type="button" value="*" onclick="document.getElementById('textview').value+='*';"></td>
+            </tr>
+            <tr>
+                <td><input class="a" type="button" value="7" onclick="document.getElementById('textview').value+=7;"></td>
+                <td><input class="a" type="button" value="8" onclick="document.getElementById('textview').value+=8;"></td>
+                <td><input class="a" type="button" value="9" onclick="document.getElementById('textview').value+=9;"></td>
+                <td><input class="a" type="button" value="-" onclick="document.getElementById('textview').value+='-';"></td>
+            </tr>
+            <tr>
+                <td><input class="a" type="button" value="4" onclick="document.getElementById('textview').value+=4;"></td>
+                <td><input class="a" type="button" value="5" onclick="document.getElementById('textview').value+=5;"></td>
+                <td><input class="a" type="button" value="6" onclick="document.getElementById('textview').value+=6;"></td>
+                <td><input class="a" type="button" value="+" onclick="document.getElementById('textview').value+='+';"></td>
+            </tr>
+            <tr>
+                <td><input class="a" type="button" value="1" onclick="document.getElementById('textview').value+=1;"></td>
+                <td><input class="a" type="button" value="2" onclick="document.getElementById('textview').value+=2;"></td>
+                <td><input class="a" type="button" value="3" onclick="document.getElementById('textview').value+=3;"></td>
+                <td><input class="a" type="button" value="=" name="equal" onclick="calc();"></td>
+            </tr>
+
+
+        </table>
+    </div>
+</body>
+
+</html>
